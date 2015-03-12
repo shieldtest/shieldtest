@@ -16,8 +16,5 @@ DB.create_table :users do
   validate do
     presence :email
     min_length 5, :email
-    unless ENV['DATABASE_URL'] == 'sqlite://dev.db'
-      format /.+@.+\..+/i, :email
-    end
   end
 end
