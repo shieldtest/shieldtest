@@ -7,6 +7,7 @@ class SearchController < ApplicationController
   end
 
   get '/noway' do
+    error(401) unless authenticated(User)
     erb :search_noway
   end
 

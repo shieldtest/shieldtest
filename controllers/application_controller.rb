@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   require_relative "../models/user.rb"
 
   configure do
-    enable :logging, :sessions, :method_override
+    enable :logging, :method_override
     use Rack::Session::Cookie, secret: "FiliBu7SterHankerCH11!Fen"
     set :root, File.expand_path("../../", __FILE__)
     use Shield::Middleware, "/login"
